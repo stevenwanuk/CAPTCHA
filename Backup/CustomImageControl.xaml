@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ImageBindingDemo.CustomImageControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ImageBindingDemo"
+    Height="Auto" Width="Auto" Name="ucParent">
+    <UserControl.Resources>
+        <local:ByteImageConverter x:Key="imageConverter" />
+    </UserControl.Resources>
+    <Canvas AllowDrop="True" Drop="imgParentPanel_Drop" Name="imgParentPanel" Width="Auto" Height="Auto">
+        <Image Width="100 " Height="100" x:Name="userImage"  HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Source="{Binding ElementName=ucParent, Path=ImageData, Converter={StaticResource imageConverter}, NotifyOnTargetUpdated=True}" TargetUpdated="userImage_TargetUpdated" SourceUpdated="userImage_SourceUpdated">
+            <Image.BitmapEffect>
+                <DropShadowBitmapEffect/>
+            </Image.BitmapEffect>
+        </Image>
+    </Canvas>
+</UserControl>

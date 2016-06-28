@@ -1,0 +1,48 @@
+﻿<Window x:Class="CAPTCHACracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CAPTCHACracker"
+        mc:Ignorable="d"
+        Title="MainWindow" >
+    <StackPanel>
+        <Image HorizontalAlignment="Left"  x:Name="OriginImg" Source="{Binding OriginBitmap}" Stretch="None" ></Image>
+        <Button Click="PreHandle_OnClick">PreHandle</Button>
+        <Image x:Name="BppImg" Stretch="None"></Image>
+        <Image x:Name="GrayImg" Stretch="None"></Image>
+        <Image x:Name="ThresholdImg" Stretch="None"></Image>
+        <Image x:Name="DoneImg" Stretch="None"></Image>
+        <Button Click="ButtonSplit_OnClick">SplitCharcter</Button>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="Split1" Stretch="None" Grid.Column="0"></Image>
+
+            <Image x:Name="Split2" Stretch="None"  Grid.Column="3"></Image>
+
+            <Image x:Name="Split3" Stretch="None"  Grid.Column="5"></Image>
+
+            <Image x:Name="Split4" Stretch="None"  Grid.Column="7"></Image>
+
+            <Image x:Name="Split5" Stretch="None"  Grid.Column="9"></Image>
+
+            <Image x:Name="Split6" Stretch="None"  Grid.Column="11"></Image>
+        </Grid>
+        <TextBlock x:Name="TBlock"></TextBlock>
+        
+    </StackPanel>
+    
+</Window>
